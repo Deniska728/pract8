@@ -1,9 +1,17 @@
 import React from 'react';
-import './App.scss';
-import MainScreen from './screens/MainScreen';
+
+import { BrowserRouter } from 'react-router-dom';
+
+import Routes from './Routes';
+
+import './styles/index.scss';
 
 function App() {
-    return <MainScreen />;
+    return (
+        <BrowserRouter>
+            <Routes />
+        </BrowserRouter>
+    );
 }
 
 export default App;

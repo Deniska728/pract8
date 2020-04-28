@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useState } from 'react';
 
 const currentYear = new Date().getFullYear();
 const monthsArr = Array.from({ length: 12 }, (x, i) => {
@@ -60,27 +60,6 @@ export default function CForm({
     const onCvvBlur = (event) => {
         onUpdateState('isCardFlipped', false);
     };
-
-    // NOTE: Currently the cursor on the card number field gets reset if we remove a number, the code bellow was used
-    // in class components, need to transform this to work with functional components.
-    // getSnapshotBeforeUpdate() {
-    //     return this.props.cardNumberRef.current.selectionStart;
-    // }
-
-    // const componentDidUpdate = function (prevProps, prevState, cursorIdx) {
-    //     const node = cardNumberRef.current;
-    //     const { cardNumber: cardNum } = state;
-    //     const { cardNumber: prevCardNum } = prevState;
-    //     if (
-    //         cardNum.length > prevCardNum.length &&
-    //         cardNum[cursorIdx - 1] === ' '
-    //     ) {
-    //         cursorIdx += 1;
-    //     } else if (prevCardNum[cursorIdx - 1] === ' ') {
-    //         cursorIdx -= 1;
-    //     }
-    //     node.selectionStart = node.selectionEnd = cursorIdx;
-    // };
 
     return (
         <div className="card-form">
